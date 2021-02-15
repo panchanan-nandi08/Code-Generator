@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+	<title>Google Drive Uploader</title>
+	<meta name="viewport" http-equiv="Content-Type" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" href="css/home.css" />
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="webjars/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="webjars/sweetalert/sweetalert.min.js"></script>
+	<script type="text/javascript" src="js/home.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" />
+</head>
+
+<body class="container" style="background: #fff;">
+	<div class="text-center">
+		<div>
+			<h1 class="display-4">Code Generator</h1>
+		</div>
+		<hr class="my-4" />
+
+		<form id="generateCodeForm" method="POST" enctype="multipart/form-data">
+			<div class="form-group left-aligned">
+				<label for="inputDirectory">Input Directory</label>
+				<input class="form-control" id="inputDirectory" aria-describedby="inputDirectoryHelp"
+					name="inputDirectory" placeholder="Enter Input Directory" />
+				<small id="inputDirectoryHelp" class="form-text text-muted">Eg: D:/CodeGen/input/</small>
+			</div>
+
+			<div class="form-group left-aligned">
+				<label for="outputDirectory">Output Directory</label>
+				<input class="form-control" id="outputDirectory" aria-describedby="outputDirectoryHelp"
+					name="outputDirectory" placeholder="Enter Input Directory" />
+				<small id="outputDirectoryHelp" class="form-text text-muted">Eg: D:/CodeGen/output/</small>
+			</div>
+
+			<div class="form-group left-aligned">
+				<label for="generatedFileType">Generated File Type</label>
+				<select class="form-control" id="generatedFileType"  name="generatedFileType">
+					<option>Java</option>
+				</select>
+			</div>
+
+			<br />
+			<!--  Parsed code result block -->
+
+			<div class="progress form-group" id="parsingProgress">
+				<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+					aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+			</div>
+
+			<button type="submit" class="pure-material-button-contained" id="btnSubmit">
+				Generate Code
+			</button>
+		</form>
+	</div>
+</body>
+
+</html>
