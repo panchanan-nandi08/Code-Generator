@@ -1,0 +1,7 @@
+spring:
+ application:
+  name: Code_Generator
+
+ftl:
+ config:
+  location: D:/CodeGen/config/configuration.json
